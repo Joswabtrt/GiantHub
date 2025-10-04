@@ -1,0 +1,236 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+
+local MainWindow = Rayfield:CreateWindow({
+   Name = "GiantHub",
+   Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
+   LoadingTitle = "Loading...",
+   LoadingSubtitle = "by joswa",
+   ShowText = "POPA", -- for mobile users to unhide rayfield, change if you'd like
+   Theme = "Amethyst", -- Check https://docs.sirius.menu/rayfield/configuration/themes
+
+   ToggleUIKeybind = "K", -- The keybind to toggle the UI visibility (string like "K" or Enum.KeyCode)
+
+   DisableRayfieldPrompts = false,
+   DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
+
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "Bad Hub"
+   },
+
+   Discord = {
+      Enabled = false, -- Prompt the user to join your Discord server if their executor supports it
+      Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ ABCD would be ABCD
+      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+   },
+
+   KeySystem = true, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "Bad Hub",
+      Subtitle = "Key System",
+      Note = "😊 ", -- Use this to tell the user how to get a key
+      FileName = "SiriusKey", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"123"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
+
+
+local MainTab = MainWindow:CreateTab("Troll", 4483362458) -- Title, Image
+
+
+local Button = MainTab:CreateButton({
+    Name =  "Invicible FE",
+    Callback = function(v)
+        v = loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Invisible-script-20557"))()
+    end,
+ })
+
+
+ local Button = MainTab:CreateButton({
+    Name =  "Fe Trolling Player Gui",
+    Callback = function(v)
+        v = loadstring(game:HttpGet("https://raw.githubusercontent.com/3LD4D0/FE-TROLLING-PLAYER-R6-R15/6eff8792afed57458d5114478b453a6f6bce5799/Fe%20trolling%20Player%20R6%20AND%20R15"))()
+
+    end,
+ })
+
+
+ local Button = MainTab:CreateButton({
+    Name =  "Fe Troll Animations",
+    Callback = function(v)
+        v = loadstring(game:HttpGet("https://raw.githubusercontent.com/ShutUpJamesTheLoserAlt/fes/refs/heads/main/e"))()
+
+    end,
+ })
+
+
+ local Button = MainTab:CreateButton({
+    Name =  "R15 GUI",
+    Callback = function(v)
+        v = loadstring(game:HttpGet("https://gitlab.com/Tsuniox/lua-stuff/-/raw/master/R15GUI.lua"))()
+
+    end,
+ })
+
+
+
+ local Button = MainTab:CreateButton({
+    Name =  "Fly v3",
+    Callback = function(v)
+        v = loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
+
+    end,
+ })
+
+ 
+ local MainTab = MainWindow:CreateTab("99 Night forest", 4483362458) -- Title, Image
+
+
+ local Button = MainTab:CreateButton({
+    Name =  "Voidware (New)",
+    Callback = function(v)
+        v = loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/VW-Add/main/nightsintheforest.lua", true))()
+
+
+    end,
+ })
+
+
+ local Button = MainTab:CreateButton({
+    Name =  "Fly v3",
+    Callback = function(v)
+        v = loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
+
+    end,
+ })
+
+
+ local MainTab = MainWindow:CreateTab("Natural Disasters", 4483362458) -- Title, Image
+
+
+ local Button = MainTab:CreateButton({
+    Name =  "Fe parts",
+    Callback = function(v)
+        v = loadstring(game:HttpGet("https://rscripts.net/raw/super-ring-parts-v4-by-lukas_1741980981842_td0ummjymf.txt",true))()
+
+    end,
+ })
+
+
+ local MainTab = MainWindow:CreateTab("Admin", 4483362458) -- Title, Image
+
+
+  local Button = MainTab:CreateButton({
+    Name =  "Infinite Yield",
+    Callback = function(v)
+        v = loadstring(game:HttpGet('https://raw.githubusercontent.com/DarkNetworks/Infinite-Yield/main/latest.lua'))()
+
+    end,
+ })
+
+
+  local Button = MainTab:CreateButton({
+    Name =  "PrizzLife v0.99",
+    Callback = function(v)
+        v = loadstring(game:HttpGet('https://raw.githubusercontent.com/devguy100/PrizzLife/main/pladmin.lua'))()
+
+    end,
+ })
+
+
+ local Input = MainTab:CreateInput({
+  Name = "Enter UserId",
+    PlaceholderText = "Например: 1",
+    RemoveTextAfterFocusLost = false,
+    Callback = function(text)
+        userIdInput = text
+    end
+})
+
+
+local Button = MainTab:CreateButton({
+    Name = "Применить скин",
+    Callback = function()
+        local uid = tonumber(userIdInput)
+        if uid then
+            applyAppearance(uid)
+            Rayfield:Notify({
+                Title = "Успех",
+                Content = "Скин применён с UserId: " .. uid,
+                Duration = 3
+            })
+        else
+            Rayfield:Notify({
+                Title = "Ошибка",
+                Content = "Введи корректный UserId!",
+                Duration = 3
+            })
+        end
+    end
+})
+
+
+local Button = MainTab:CreateButton({
+    Name = "Сбросить персонажа",
+    Callback = function()
+        resetCharacter()
+        Rayfield:Notify({
+            Title = "Персонаж сброшен",
+            Content = "Возвращён стандартный вид",
+            Duration = 3
+        })
+    end
+})
+
+
+local MainTab = MainWindow:CreateTab("Character", 4483362458) -- Title, Image
+local userIdInput = ""
+
+
+local Input = MainTab:CreateInput({
+  Name = "Enter UserId",
+    PlaceholderText = "Например: 1",
+    RemoveTextAfterFocusLost = false,
+    Callback = function(text)
+        userIdInput = text
+    end
+})
+
+
+local Button = MainTab:CreateButton({
+    Name = "Применить скин",
+    Callback = function()
+        local uid = tonumber(userIdInput)
+        if uid then
+            applyAppearance(uid)
+            Rayfield:Notify({
+                Title = "Успех",
+                Content = "Скин применён с UserId: " .. uid,
+                Duration = 3
+            })
+        else
+            Rayfield:Notify({
+                Title = "Ошибка",
+                Content = "Введи корректный UserId!",
+                Duration = 3
+            })
+        end
+    end
+})
+
+
+local Button = MainTab:CreateButton({
+    Name = "Сбросить персонажа",
+    Callback = function()
+        resetCharacter()
+        Rayfield:Notify({
+            Title = "Персонаж сброшен",
+            Content = "Возвращён стандартный вид",
+            Duration = 3
+        })
+    end
+})
