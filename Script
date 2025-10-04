@@ -249,9 +249,9 @@ local Button = MainTab:CreateButton({
 
 
  local Button = MainTab:CreateButton({
-    Name =  "NoclipBest",
+    Name =  "NoclipBlack",
     Callback = function(v)
-        v = loadstring(game:HttpGet("https://pastebin.com/raw/2JZWpiKn", true))()
+        v = https://raw.githubusercontent.com/Joswabtrt/Noclipez/refs/heads/main/MainScript?token=GHSAT0AAAAAADMPAHYNAFXVLDGIS4PU34DC2HBHSDA
 
     end,
  })
