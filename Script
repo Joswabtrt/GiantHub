@@ -246,3 +246,12 @@ local Button = MainTab:CreateButton({
 
     end,
  })
+
+
+local Button = MainTab:CreateButton({
+    Name =  "TSB",
+    Callback = function(v)
+        v = loadstring (game: HttpGet ("https://raw.githubusercontent.com/minhnhatdepzai8-cloud/TONG-HOP-SCRIPT/refs/heads/main/TSB")) ()
+
+    end,
+ })
