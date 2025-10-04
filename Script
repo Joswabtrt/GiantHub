@@ -246,12 +246,3 @@ local Button = MainTab:CreateButton({
 
     end,
  })
-
-
- local Button = MainTab:CreateButton({
-    Name =  "NoclipBlack",
-    Callback = function(v)
-        v = https://raw.githubusercontent.com/Joswabtrt/Noclipez/refs/heads/main/MainScript?token=GHSAT0AAAAAADMPAHYNAFXVLDGIS4PU34DC2HBHSDA
-
-    end,
- })
